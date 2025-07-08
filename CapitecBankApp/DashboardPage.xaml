@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="CapitecBankApp.DashboardPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Dashboard"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <!-- Header Section -->
+            <StackLayout Orientation="Horizontal" Spacing="15">
+                <Border BackgroundColor="#0066CC" 
+                        StrokeShape="RoundRectangle 25"
+                        WidthRequest="50" 
+                        HeightRequest="50">
+                    <Label Text="JD" 
+                           FontSize="18" 
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Border>
+                <StackLayout VerticalOptions="Center">
+                    <Label Text="Good Morning" 
+                           FontSize="14" 
+                           TextColor="Gray"/>
+                    <Label Text="John Doe" 
+                           FontSize="18" 
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Account Balance Card -->
+            <Border BackgroundColor="White" 
+                    StrokeShape="RoundRectangle 15"
+                    StrokeThickness="0"
+                    Shadow="{StaticResource CommonShadow}">
+                <StackLayout Padding="20" Spacing="10">
+                    <Label Text="Total Balance" 
+                           FontSize="14" 
+                           TextColor="Gray"/>
+                    <Label Text="R 15,247.86" 
+                           FontSize="32" 
+                           FontAttributes="Bold"
+                           TextColor="#0066CC"/>
+                    <Label Text="Available Balance: R 15,247.86" 
+                           FontSize="12" 
+                           TextColor="Gray"/>
+                </StackLayout>
+            </Border>
+
+            <!-- Quick Actions -->
+            <StackLayout>
+                <Label Text="Quick Actions" 
+                       FontSize="18" 
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       Margin="0,0,0,10"/>
+
+                <Grid RowDefinitions="*,*" ColumnDefinitions="*,*" 
+                      RowSpacing="15" ColumnSpacing="15">
+
+                    <!-- Transfer Money -->
+                    <Border Grid.Row="0" Grid.Column="0"
+                            BackgroundColor="White" 
+                            StrokeShape="RoundRectangle 15"
+                            StrokeThickness="0">
+                        <StackLayout Padding="15" Spacing="8" HorizontalOptions="Center">
+                            <Border BackgroundColor="#E8F5E8" 
+                                    StrokeShape="RoundRectangle 25"
+                                    WidthRequest="50" 
+                                    HeightRequest="50"
+                                    HorizontalOptions="Center">
+                                <Label Text="💸" 
+                                       FontSize="24"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Border>
+                            <Label Text="Transfer" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Border>
+
+                    <!-- Pay Bills -->
+                    <Border Grid.Row="0" Grid.Column="1"
+                            BackgroundColor="White" 
+                            StrokeShape="RoundRectangle 15"
+                            StrokeThickness="0">
+                        <StackLayout Padding="15" Spacing="8" HorizontalOptions="Center">
+                            <Border BackgroundColor="#FFF3E0" 
+                                    StrokeShape="RoundRectangle 25"
+                                    WidthRequest="50" 
+                                    HeightRequest="50"
+                                    HorizontalOptions="Center">
+                                <Label Text="💡" 
+                                       FontSize="24"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Border>
+                            <Label Text="Pay Bills" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Border>
+
+                    <!-- Buy Airtime -->
+                    <Border Grid.Row="1" Grid.Column="0"
+                            BackgroundColor="White" 
+                            StrokeShape="RoundRectangle 15"
+                            StrokeThickness="0">
+                        <StackLayout Padding="15" Spacing="8" HorizontalOptions="Center">
+                            <Border BackgroundColor="#E3F2FD" 
+                                    StrokeShape="RoundRectangle 25"
+                                    WidthRequest="50" 
+                                    HeightRequest="50"
+                                    HorizontalOptions="Center">
+                                <Label Text="📱" 
+                                       FontSize="24"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Border>
+                            <Label Text="Buy Airtime" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Border>
+
+                    <!-- View Transactions -->
+                    <Border Grid.Row="1" Grid.Column="1"
+                            BackgroundColor="White" 
+                            StrokeShape="RoundRectangle 15"
+                            StrokeThickness="0">
+                        <StackLayout Padding="15" Spacing="8" HorizontalOptions="Center">
+                            <Border BackgroundColor="#F3E5F5" 
+                                    StrokeShape="RoundRectangle 25"
+                                    WidthRequest="50" 
+                                    HeightRequest="50"
+                                    HorizontalOptions="Center">
+                                <Label Text="📊" 
+                                       FontSize="24"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Border>
+                            <Label Text="Transactions" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTransactionsClicked"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+
+                </Grid>
+            </StackLayout>
+
+            <!-- Recent Transactions -->
+            <StackLayout>
+                <Label Text="Recent Transactions" 
+                       FontSize="18" 
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       Margin="0,0,0,10"/>
+
+                <Border BackgroundColor="White" 
+                        StrokeShape="RoundRectangle 15"
+                        StrokeThickness="0">
+                    <StackLayout Padding="15" Spacing="15">
+
+                        <!-- Transaction 1 -->
+                        <StackLayout Orientation="Horizontal">
+                            <Border BackgroundColor="#E8F5E8" 
+                                    StrokeShape="RoundRectangle 20"
+                                    WidthRequest="40" 
+                                    HeightRequest="40"
+                                    VerticalOptions="Center">
+                                <Label Text="🏪" 
+                                       FontSize="16"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Border>
+                            <Grid HorizontalOptions="Fill" 
+                                         VerticalOptions="Center"
+                                         Margin="15,0,0,0">
+                                <Label Text="Shoprite Checkers" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+                                <Label Text="Today, 14:30" 
+                                       FontSize="12" 
+                                       TextColor="Gray"/>
+                            </Grid>
+                            <Label Text="-R 487.50" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="Red"
+                                   VerticalOptions="Center"/>
+                        </StackLayout>
+
+                        <!-- Transaction 2 -->
+                        <StackLayout Orientation="Horizontal">
+                            <Border BackgroundColor="#E3F2FD" 
+                                    StrokeShape="RoundRectangle 20"
+                                    WidthRequest="40" 
+                                    HeightRequest="40"
+                                    VerticalOptions="Center">
+                                <Label Text="💰" 
+                                       FontSize="16"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Border>
+                            <Grid HorizontalOptions="Fill" 
+                                  VerticalOptions="Center"
+                                  Margin="15,0,0,0">
+                                <Label Text="Salary Payment" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+                                <Label Text="Yesterday, 06:00" 
+                                       FontSize="12" 
+                                       TextColor="Gray"/>
+                            </Grid>
+                            <Label Text="+R 12,500.00" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="Green"
+                                   VerticalOptions="Center"/>
+                        </StackLayout>
+
+                        <!-- Transaction 3 -->
+                        <StackLayout Orientation="Horizontal">
+                            <Border BackgroundColor="#FFF3E0" 
+                                    StrokeShape="RoundRectangle 20"
+                                    WidthRequest="40" 
+                                    HeightRequest="40"
+                                    VerticalOptions="Center">
+                                <Label Text="⚡" 
+                                       FontSize="16"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Border>
+                            <Grid HorizontalOptions="Fill" 
+                                         VerticalOptions="Center"
+                                         Margin="15,0,0,0">
+                                <Label Text="Eskom Payment" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+                                <Label Text="2 days ago, 10:15" 
+                                       FontSize="12" 
+                                       TextColor="Gray"/>
+                            </Grid>
+                            <Label Text="-R 850.00" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="Red"
+                                   VerticalOptions="Center"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                </Border>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

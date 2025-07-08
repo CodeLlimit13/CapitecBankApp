@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="CapitecBankApp.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Capitec Bank"
+             BackgroundColor="#0066CC">
+
+    <ScrollView>
+        <StackLayout Padding="30,80,30,30" Spacing="40">
+
+            <!-- Logo Section -->
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Border BackgroundColor="White" 
+                        StrokeShape="RoundRectangle 50"
+                        WidthRequest="100" 
+                        HeightRequest="100"
+                        HorizontalOptions="Center">
+                    <Label Text="C" 
+                           FontSize="48" 
+                           FontAttributes="Bold"
+                           TextColor="#0066CC"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Border>
+                <Label Text="Capitec Bank" 
+                       FontSize="28" 
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       Margin="0,15,0,0"/>
+            </StackLayout>
+
+            <!-- Login Form -->
+            <StackLayout Spacing="20">
+
+                <!-- Username Field -->
+                <Border BackgroundColor="White" 
+                        StrokeShape="RoundRectangle 10"
+                        StrokeThickness="0">
+                    <Entry x:Name="UsernameEntry"
+                           Placeholder="Username or ID Number"
+                           FontSize="16"
+                           Margin="15,10"/>
+                </Border>
+
+                <!-- Password Field -->
+                <Border BackgroundColor="White" 
+                        StrokeShape="RoundRectangle 10"
+                        StrokeThickness="0">
+                    <Entry x:Name="PasswordEntry"
+                           Placeholder="Password"
+                           IsPassword="True"
+                           FontSize="16"
+                           Margin="15,10"/>
+                </Border>
+
+                <!-- Remember Me -->
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <CheckBox x:Name="RememberCheckBox" Color="White"/>
+                    <Label Text="Remember me" 
+                           TextColor="White" 
+                           FontSize="14"
+                           VerticalOptions="Center"/>
+                </StackLayout>
+
+                <!-- Login Button -->
+                <Button Text="LOG IN" 
+                        BackgroundColor="#00AA44"
+                        TextColor="White"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        Clicked="OnLoginClicked"/>
+
+                <!-- Forgot Password -->
+                <Label Text="Forgot Password?" 
+                       TextColor="White"
+                       FontSize="14"
+                       TextDecorations="Underline"
+                       HorizontalOptions="Center"/>
+
+            </StackLayout>
+
+            <!-- Bottom Section -->
+            <StackLayout VerticalOptions="End" Spacing="15">
+                <Label Text="Don't have an account?" 
+                       TextColor="White"
+                       FontSize="14"
+                       HorizontalOptions="Center"/>
+
+                <Button Text="REGISTER" 
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        BorderColor="White"
+                        BorderWidth="2"
+                        HeightRequest="45"
+                        CornerRadius="10"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
